@@ -1,8 +1,10 @@
 ﻿using VavaMVP.Entities;
 
+#region Definitions
 string exitKey = "bye";
 
 string? folderPath = null;
+#endregion
 
 while (folderPath != exitKey)
 {
@@ -34,7 +36,6 @@ while (folderPath != exitKey)
     foreach (var matchFilePath in matches)
     {
         var match = new Matches();
-
         var matchData = File.ReadAllLines(matchFilePath);
 
         #region Check & read match data
@@ -57,7 +58,36 @@ while (folderPath != exitKey)
             break;
         }
 
+        for (int pIndex = 1; pIndex < matchData.Length; pIndex++)
+        {
+            // playername;nickname;number;team name;position;
+            var player = new Players();
+            var playerData = matchData[pIndex].Split(';');
 
+            if (playerData.Length < 5)
+            {
+                Console.WriteLine("Player data is invalid.");
+                break;
+            }
+
+            player.Name = playerData[0];
+            player.NickName = playerData[1];
+
+            int playerNumber = 0;
+            bool isPlayerNumberValid = int.TryParse(matchData[2], out playerNumber);
+
+            if (isPlayerNumberValid)
+            {
+                player.Number = playerNumber;
+            }
+            else
+            {
+                Console.WriteLine("Player data is invalid.");
+                break;
+            }
+
+            
+        }
         #endregion
     }
 }
