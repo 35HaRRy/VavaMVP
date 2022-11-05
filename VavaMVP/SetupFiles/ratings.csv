@@ -1,0 +1,15 @@
+﻿BASKETBALL;Scored point;Guard;2;false;true
+BASKETBALL;Scored point;Forward;2;false;true
+BASKETBALL;Scored point;Center;2;false;true
+BASKETBALL;Rebound;Guard;3;false;false
+BASKETBALL;Rebound;Forward;2;false;false
+BASKETBALL;Rebound;Center;1;false;false
+BASKETBALL;Assist;Guard;1;false;false
+BASKETBALL;Assist;Forward;2;false;false
+BASKETBALL;Assist;Center;3;false;false
+HANDBALL;Initial rating points;Goalkeeper;50;true;false
+HANDBALL;Initial rating points;Field player;50;true;false
+HANDBALL;Goal made;Goalkeeper;5;false;true;false
+HANDBALL;Goal made;Field player;1;false;true
+HANDBALL;Goal recieved;Goalkeeper;-2;false;false
+HANDBALL;Goal recieved;Field player;-1;false;false
